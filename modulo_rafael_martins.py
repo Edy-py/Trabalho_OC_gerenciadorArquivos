@@ -38,22 +38,48 @@ def ler_arquivo(nome_arquivo: str, diretorio: str = ".") -> str:
         return arquivo.read()
 
 
+import os
+
+import os
+
+
 def renomear_arquivo(
-    nome_antigo: str,
-    nome_novo: str,
-    diretorio: str = "."
+    caminho_arquivo: str,
+    novo_nome: str
 ) -> str:
-    """Renomeia um arquivo."""
+    """
+    Renomeia um arquivo.
 
-    caminho_antigo = os.path.join(diretorio, nome_antigo)
+    Args:
+        caminho_arquivo: Caminho relativo ou absoluto do arquivo.
+        novo_nome: Novo nome do arquivo.
 
-    if not os.path.exists(caminho_antigo):
+    Returns:
+        Caminho completo do arquivo renomeado.
+    """
+
+    caminho_arquivo = os.path.abspath(caminho_arquivo)
+
+    if not os.path.isfile(caminho_arquivo):
         raise FileNotFoundError(
-            f"O arquivo '{nome_antigo}' não existe."
+            f"Arquivo não encontrado: {caminho_arquivo}"
         )
 
-    caminho_novo = os.path.join(diretorio, nome_novo)
+    diretorio = os.path.dirname(caminho_arquivo)
 
-    os.rename(caminho_antigo, caminho_novo)
+    novo_caminho = os.path.join(
+        diretorio,
+        novo_nome
+    )
 
-    return caminho_novo
+    if os.path.exists(novo_caminho):
+        raise FileExistsError(
+            f"Já existe um arquivo chamado '{novo_nome}'"
+        )
+
+    os.rename(
+        caminho_arquivo,
+        novo_caminho
+    )
+
+    return novo_caminho
