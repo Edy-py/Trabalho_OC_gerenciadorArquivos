@@ -5,7 +5,8 @@ from pathlib import Path
 import modulo_edilson
 
 # IMPORTAR OS MÓDULOS DE VOCÊS AQUI ABAIXO
-# import modulo_rafael
+import modulo_rafael_martins
+import modulo_rafael_naves
 
 
 def exibir_cabecalho(titulo: str):
@@ -99,7 +100,7 @@ def tela_listar_arquivos():
 
 
 # ==========================================
-# PARTE: RAFAEL OC
+# PARTE: RAFAEL Martins
 # ==========================================
 
 
@@ -118,12 +119,15 @@ def tela_excluir_arquivo():
         diretorio = "."
 
     try:
-        # descomentar e ajustar a linha abaixo com sua função
-        # resultado = modulo_rafael.excluir_arquivo(nome_arquivo, diretorio)
-        # print(f"\n\033[1;32m[SUCESSO] {resultado}\033[0m")
+        modulo_rafael_martins.excluir_arquivo(
+        nome_arquivo,
+        diretorio
+        )
+
         print(
-            "\n\033[1;33m[AVISO] Tela pronta! Conecte sua função aqui, Rafael OC.\033[0m"
-        )  # excluir linha depois de descomentado
+            "\n\033[1;32m[SUCESSO] Arquivo excluído com sucesso.\033[0m"
+        )  
+
     except Exception as e:
         print(f"\n\033[1;31m[ERRO] {e}\033[0m")
 
@@ -145,12 +149,15 @@ def tela_ler_arquivo():
         diretorio = "."
 
     try:
-        # descomentar e ajustar a linha abaixo com sua função
-        # conteudo = modulo_rafael.ler_arquivo(nome_arquivo, diretorio)
-        # print(f"\n\033[1;34m=== Conteúdo do Arquivo ===\033[0m\n{conteudo}\n\033[1;34m===========================\033[0m")
+        conteudo = modulo_rafael_martins.ler_arquivo(
+        nome_arquivo,
+        diretorio
+        )
+
         print(
-            "\n\033[1;33m[AVISO] Tela pronta! Conecte sua função aqui, Rafael OC.\033[0m"
-        )  # excluir depois que descomentar
+            f"\n\033[1;34m=== Conteúdo do Arquivo ===\033[0m\n" f"{conteudo}\n"
+            f"\033[1;34m===========================\033[0m"
+        ) 
     except Exception as e:
         print(f"\n\033[1;31m[ERRO] {e}\033[0m")
 
@@ -171,9 +178,12 @@ def tela_renomear():
         return
 
     try:
-        # Caso vc faça a função opcional, adiciona aqui, caso não, exclua
+        resultado = modulo_rafael_martins.renomear_arquivo(
+        caminho_atual,
+        novo_nome
+        )
         print(
-            "\n\033[1;33m[AVISO] Tela pronta! Caso tenha feito a função de renomear, coloque-a aqui.\033[0m"
+            f"\n\033[1;32m[SUCESSO] Arquivo renomeado para: {resultado}\033[0m"
         )
     except Exception as e:
         print(f"\n\033[1;31m[ERRO] {e}\033[0m")
@@ -201,7 +211,7 @@ def tela_excluir_diretorio():
         local = "."
 
     try:
-        resultado = modulo_rafael.excluir_diretorio(diretorio, local)
+        resultado = modulo_rafael_naves.excluir_diretorio(diretorio, local)
         print(f"\n\033[1;32m[SUCESSO] {resultado}\033[0m")
     except Exception as e:
         print(f"\n\033[1;31m[ERRO] {e}\033[0m")
@@ -228,7 +238,7 @@ def tela_copiar_arquivo():
         return
 
     try:
-        resultado = modulo_rafael.copiar_arquivo(nome_arquivo, arquivo, diretorio)
+        resultado = modulo_rafael_naves.copiar_arquivo(nome_arquivo, arquivo, diretorio)
         print(f"\n\033[1;32m[SUCESSO] {resultado}\033[0m")
     except Exception as e:
         print(f"\n\033[1;31m[ERRO] {e}\033[0m")
@@ -249,7 +259,7 @@ def tela_copiar_diretorio():
         return
 
     try:
-        resultado = modulo_rafael.copiar_diretorio(origem, destino)
+        resultado = modulo_rafael_naves.copiar_diretorio(origem, destino)
         print(f"\n\033[1;32m[SUCESSO] {resultado}\033[0m")
     except Exception as e:
         print(f"\n\033[1;31m[ERRO] {e}\033[0m")
