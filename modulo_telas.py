@@ -174,7 +174,7 @@ def tela_renomear():
     if caminho_atual.lower() == "v" or not caminho_atual:
         return
 
-    novo_nome = input("Novo nome ou novo caminho: ").strip()
+    novo_nome = input("Novo nome : ").strip()
     if novo_nome.lower() == "v" or not novo_nome:
         return
 
