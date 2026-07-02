@@ -38,11 +38,6 @@ def ler_arquivo(nome_arquivo: str, diretorio: str = ".") -> str:
         return arquivo.read()
 
 
-import os
-
-import os
-
-
 def renomear_arquivo(
     caminho_arquivo: str,
     novo_nome: str

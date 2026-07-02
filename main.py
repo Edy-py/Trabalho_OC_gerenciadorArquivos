@@ -43,9 +43,9 @@ def menu_principal():
         elif opcao == "6":
             modulo_telas.tela_criar_diretorio()
         elif opcao == "7":
-            modulo_telas.tela_excluir_diretorio()
-        elif opcao == "8":
             modulo_telas.tela_criar_arquivo()
+        elif opcao == "8":
+            modulo_telas.tela_excluir_diretorio()
         elif opcao == "9":
             modulo_telas.tela_excluir_arquivo()
         elif opcao == "0":
