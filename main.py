@@ -5,13 +5,11 @@ def menu_principal():
     while True:
         modulo_telas.exibir_cabecalho("Sistema de Arquivos - Grupo v1.0")
 
-        # --- PARTE EDILSON ---
-
         print("\n\033[1;36m[ Operações em Arquivos ]\033[0m")
 
         print("  \033[1;32m[1]\033[0m Ler Arquivo")
         print("  \033[1;32m[2]\033[0m Listar Arquivos")
-        print("  \033[1;32m[3]\033[0m Renomear Arquivo/Diretório") # necessário ajustes
+        print("  \033[1;32m[3]\033[0m Renomear Arquivo/Diretório")
         print("  \033[1;32m[4]\033[0m Copiar Arquivo")
         print("  \033[1;32m[5]\033[0m Copiar Diretório")
 
