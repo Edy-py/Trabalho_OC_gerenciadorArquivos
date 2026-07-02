@@ -100,7 +100,7 @@ def tela_listar_arquivos():
 
 
 # ==========================================
-# PARTE: RAFAEL Martins
+# PARTE: Rafael Martins
 # ==========================================
 
 
@@ -162,6 +162,7 @@ def tela_ler_arquivo():
         print(f"\n\033[1;31m[ERRO] {e}\033[0m")
 
     input("\nPressione [Enter] para voltar...")
+
 
 
 def tela_renomear():
